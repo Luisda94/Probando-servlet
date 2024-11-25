@@ -28,17 +28,17 @@ public class respuestaEsperada extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//   doPost(request, response); //<--si deseo hacerlo por post aqui en el get le pongo eso 
+		   doPost(request, response); //<--si deseo hacerlo por post aqui en el get le pongo eso 
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String nombre = request.getParameter("nombre");//<--esto obtiene el nombre de appFormulario
-        response.setContentType("text/html");
-        PrintWriter salida = response.getWriter();
-        salida.println("<html><body>");
-        salida.println("<h1>El nombre recibido es: " + nombre + "</h1>");
-        salida.println("<form action='appFormularioSimple' method='get'>");
-        salida.println("<button type='submit'>Volver al formulario</button>");
-        salida.println("</form>");
-        salida.println("</body></html>");
+//		String nombre = request.getParameter("nombre");//<--esto obtiene el nombre de appFormulario
+//        response.setContentType("text/html");
+//        PrintWriter salida = response.getWriter();
+//        salida.println("<html><body>");
+//        salida.println("<h1>El nombre recibido es: " + nombre + "</h1>");//<--efectivamente obtine el nombre del otro servlet app...
+//        salida.println("<form action='appFormularioSimple' method='get'>");//<--para obtener al otro servlet y asi que tenga sentido el boton de abajo
+//        salida.println("<button type='submit'>Volver al formulario</button>");//<--para ver el volver al formulario.
+//        salida.println("</form>");
+//        salida.println("</body></html>");
 		
 		
 //		//Aqui establicimos en nomb para compartirlo entre los servlets para trabjara con jsp 
@@ -56,7 +56,17 @@ public class respuestaEsperada extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);//<--esto hace que funcione el dogeut
+//		doGet(request, response);//<--esto hace que funcione el doGet si deaseas que funcione por alla
+		String nombre = request.getParameter("nombre");//<--esto obtiene el nombre de appFormulario
+        response.setContentType("text/html");
+        PrintWriter salida = response.getWriter();
+        salida.println("<html><body>");
+        salida.println("<h1>El nombre enviado es: " + nombre + "</h1>");//<--efectivamente obtine el nombre del otro servlet app...
+        salida.println("<form action='appFormularioSimple' method='get'>");//<--para obtener al otro servlet y asi que tenga sentido el boton de abajo
+        salida.println("<button type='submit'>Volver al formulario</button>");//<--para ver el volver al formulario.
+        salida.println("</form>");
+        salida.println("</body></html>");
+
 	}
 
 }

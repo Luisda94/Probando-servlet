@@ -36,10 +36,10 @@ public class appFormularioSimple extends HttpServlet {
 		escribiendole.println("<html><body>");
 	//	escribiendole.println("el serlet me envio: ");
 //		escribiendole.println(nombre);
-        escribiendole.println("<form action='respuestaEsperada' method='post'>");
-        escribiendole.println("<label for='nombre'>Ingrese el Nombre:</label>");
-        escribiendole.println("<input type='text' id='nombre' name='nombre' required>");
-        escribiendole.println("<button type='submit'>Enviar</button>");
+        escribiendole.println("<form action='respuestaEsperada' method='post'>"); //<--formulario creado.
+        escribiendole.println("<label for='nombre'>Ingrese el Nombre:</label>"); //<-- el label para ingresar lo que piden 
+        escribiendole.println("<input type='text' id='nombre' name='nombre' required>");//<--para poder interactual con el usuario
+        escribiendole.println("<button type='submit'>Enviar</button>");//<--boton para enviar 
         escribiendole.println("</form>");
 		escribiendole.println("</html></body>");
 		
